@@ -1,25 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Antarctic Wallet</title>
+    <title>Antarctic Wallet Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { 
-            font-family: Arial; 
-            padding: 20px; 
-            background: #1a1a1a; 
-            color: white; 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+        .test-btn {
+            background: #2481cc;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .status {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <h2>Antarctic Wallet</h2>
-    <p>Тестовое приложение работает! 🎉</p>
-    <button onclick="alert('Приложение работает!')">Нажми меня</button>
+    <h1>✅ Antarctic Wallet</h1>
+    <p>Тестовое приложение работает!</p>
     
+    <div class="status">
+        <h3>Статус: ЗАПУЩЕНО</h3>
+        <p>Telegram Mini App активен</p>
+    </div>
+    
+    <button class="test-btn" onclick="testAlert()">Тест кнопки</button>
+    <button class="test-btn" onclick="showPlatform()">Показать платформу</button>
+    <button class="test-btn" onclick="testTelegram()">Тест Telegram API</button>
+    
+    <div id="result" style="margin-top: 20px;"></div>
+
     <script>
-        Telegram.WebApp.ready();
-        Telegram.WebApp.expand();
+        // Инициализация Telegram Web App
+        const tg = window.Telegram.WebApp;
+        
+        // Расширяем на весь экран
+        tg.expand();
+        
+        // Говорим Telegram что приложение готово
+        tg.ready();
+        
+        function testAlert() {
+            document.getElementById('result').innerHTML = 
+                '<p style="color: green;">✅ Кнопки работают!</p>';
+        }
+        
+        function showPlatform() {
+            const platform = tg.platform;
+            document.getElementById('result').innerHTML = 
+                `<p>Платформа: <strong>${platform}</strong></p>`;
+        }
+        
+        function testTelegram() {
+            const user = tg.initDataUnsafe.user;
+            let userInfo = 'Пользователь: Не авторизован';
+            
+            if (user) {
+                userInfo = `Пользователь: ${user.first_name} (${user.username || 'без username'})`;
+            }
+            
+            document.getElementById('result').innerHTML = `
+                <p>${userInfo}</p>
+                <p>Версия WebApp: ${tg.version}</p>
+                <p>Цветовая схема: ${tg.colorScheme}</p>
+            `;
+        }
+        
+        // Показываем что скрипт загружен
+        document.getElementById('result').innerHTML = 
+            '<p style="color: green;">✅ JavaScript загружен и работает!</p>';
     </script>
 </body>
 </html>
