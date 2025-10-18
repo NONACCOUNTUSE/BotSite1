@@ -108,11 +108,6 @@ body {
   transition: filter 0.3s ease;
 }
 
-.nav-btn.active .nav-icon {
-  filter: brightness(0) invert(1); /* делает иконку белой при активной кнопке */
-}
-
-
 .nav-btn.active {
     background: #007bff;
     color: white;
@@ -122,6 +117,7 @@ body {
 .nav-btn:not(.active):hover {
     background: #f0f0f0;
 }
+
 
 
 
