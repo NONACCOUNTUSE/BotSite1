@@ -19,9 +19,6 @@ function initializeApp() {
             // Обновляем имя пользователя (только реальное имя)
             const userName = user.first_name || 'Пользователь';
             document.getElementById('userName').textContent = userName;
-            
-            // Обновляем ID (только ID, без username)
-            document.getElementById('userId').textContent = `ID: ${user.id}`;
         }
         
         console.log('Telegram Web App initialized with user:', user);
@@ -29,9 +26,9 @@ function initializeApp() {
         console.log('Telegram Web App not available');
         // Тестовые данные для браузера
         document.getElementById('userName').textContent = 'Иван Иванов';
-        document.getElementById('userId').textContent = 'ID: 123456789';
     }
 }
 
 // Запускаем при загрузке
 document.addEventListener('DOMContentLoaded', initializeApp);
+
