@@ -8,14 +8,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Верхняя белая часть -->
     <div class="user-header">
         <div class="avatar" id="userAvatar">👤</div>
         <div class="user-info">
             <div class="username" id="userName">Пользователь</div>
         </div>
     </div>
+
+    <!-- Центральная часть с менюшками -->
+    <div class="content-area">
+        <div class="menu-content active" id="menu1">
+            <!-- Меню 1 -->
+        </div>
+        <div class="menu-content" id="menu2">
+            <!-- Меню 2 -->
+        </div>
+        <div class="menu-content" id="menu3">
+            <!-- Меню 3 -->
+        </div>
+        <div class="menu-content" id="menu4">
+            <!-- Меню 4 -->
+        </div>
+        <div class="menu-content" id="menu5">
+            <!-- Меню 5 -->
+        </div>
+    </div>
+
+    <!-- Нижняя белая часть с кнопками -->
+    <div class="bottom-nav">
+        <button class="nav-btn active" onclick="showMenu(1)">
+            <span>🏠</span>
+        </button>
+        <button class="nav-btn" onclick="showMenu(2)">
+            <span>💳</span>
+        </button>
+        <button class="nav-btn" onclick="showMenu(3)">
+            <span>📊</span>
+        </button>
+        <button class="nav-btn" onclick="showMenu(4)">
+            <span>👥</span>
+        </button>
+        <button class="nav-btn" onclick="showMenu(5)">
+            <span>⚙️</span>
+        </button>
+    </div>
     
     <script src="script.js"></script>
 </body>
 </html>
-
