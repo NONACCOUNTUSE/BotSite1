@@ -55,7 +55,7 @@ body {
     background: white;
     margin: 0;
     border-radius: 20px 20px 0 0;
-    margin-top: 10px;
+    margin-top: 20px;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -109,5 +109,6 @@ body {
 .nav-btn:not(.active):hover {
     background: #f0f0f0;
 }
+
 
 
