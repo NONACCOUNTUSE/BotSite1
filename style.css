@@ -12,7 +12,7 @@ body {
 
 .user-header {
     background: white;
-    height: 20vh; /* 2/10 части экрана */
+    height: 10vh; /* 2/10 части экрана */
     width: 100%;
     display: flex;
     align-items: center;
@@ -50,3 +50,4 @@ body {
     color: #666;
     margin-top: 2px;
 }
+
