@@ -8,42 +8,45 @@ body {
     background: #007bff;
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
 }
 
-.user-profile {
+.user-header {
     background: white;
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 300px;
+    height: 20vh; /* 2/10 части экрана */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .avatar {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: #007bff;
-    margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: white;
+    margin-right: 15px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .username {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 5px;
 }
 
 .user-id {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #666;
+    margin-top: 2px;
 }
