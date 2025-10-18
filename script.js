@@ -29,6 +29,32 @@ function initializeApp() {
     }
 }
 
-// Запускаем при загрузке
-document.addEventListener('DOMContentLoaded', initializeApp);
+// Функция для переключения меню
+function showMenu(menuNumber) {
+    // Скрываем все меню
+    const allMenus = document.querySelectorAll('.menu-content');
+    allMenus.forEach(menu => menu.classList.remove('active'));
+    
+    // Убираем активный класс со всех кнопок
+    const allButtons = document.querySelectorAll('.nav-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Показываем выбранное меню
+    const selectedMenu = document.getElementById(`menu${menuNumber}`);
+    if (selectedMenu) {
+        selectedMenu.classList.add('active');
+    }
+    
+    // Активируем выбранную кнопку
+    const selectedButton = document.querySelectorAll('.nav-btn')[menuNumber - 1];
+    if (selectedButton) {
+        selectedButton.classList.add('active');
+    }
+}
 
+// Запускаем при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    initializeApp();
+    // По умолчанию открываем первую кнопку
+    showMenu(1);
+});
