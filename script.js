@@ -16,18 +16,20 @@ function initializeApp() {
                 document.getElementById('userAvatar').textContent = initial || '👤';
             }
             
-            // Обновляем имя пользователя
+            // Обновляем имя пользователя (только реальное имя)
             const userName = user.first_name || 'Пользователь';
             document.getElementById('userName').textContent = userName;
             
-            // Обновляем ID
-            const userId = user.username ? `@${user.username}` : `ID: ${user.id}`;
-            document.getElementById('userId').textContent = userId;
+            // Обновляем ID (только ID, без username)
+            document.getElementById('userId').textContent = `ID: ${user.id}`;
         }
         
         console.log('Telegram Web App initialized with user:', user);
     } else {
         console.log('Telegram Web App not available');
+        // Тестовые данные для браузера
+        document.getElementById('userName').textContent = 'Иван Иванов';
+        document.getElementById('userId').textContent = 'ID: 123456789';
     }
 }
 
