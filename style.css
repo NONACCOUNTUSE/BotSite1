@@ -112,6 +112,35 @@ body {
     text-align: center; /* центрируем текст */
 }
 
+.links-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* расстояние между ссылками и иконкой */
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
+
+.links-row a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;         /* не переносим текст */
+    overflow: hidden;            /* обрезаем текст если не помещается */
+    text-overflow: ellipsis;     /* показываем "..." при обрезке */
+    max-width: 120px;            /* задаем максимально допустимую ширину */
+}
+
+.links-row a:hover {
+    text-decoration: underline;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 /* Нижняя белая часть с кнопками */
 .bottom-nav {
     background: white;
@@ -181,6 +210,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
