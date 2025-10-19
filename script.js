@@ -3,9 +3,9 @@ function initializeApp() {
     if (window.Telegram && Telegram.WebApp) {
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
-        
+
         const user = Telegram.WebApp.initDataUnsafe?.user;
-        
+
         if (user) {
             // Обновляем аватар
             if (user.photo_url) {
@@ -15,12 +15,12 @@ function initializeApp() {
                 const initial = firstName.charAt(0).toUpperCase();
                 document.getElementById('userAvatar').textContent = initial || '👤';
             }
-            
-            // Обновляем имя пользователя (только реальное имя)
+
+            // Обновляем имя пользователя
             const userName = user.first_name || 'Пользователь';
             document.getElementById('userName').textContent = userName;
         }
-        
+
         console.log('Telegram Web App initialized with user:', user);
     } else {
         console.log('Telegram Web App not available');
@@ -33,29 +33,31 @@ function initializeApp() {
 function showMenu(menuNumber) {
     const allMenus = document.querySelectorAll('.menu-content');
     const allButtons = document.querySelectorAll('.nav-btn');
-    
-    // Убираем активность у всех кнопок
+
+    // Сбрасываем активность у всех кнопок
     allButtons.forEach(btn => btn.classList.remove('active'));
     allButtons[menuNumber - 1].classList.add('active');
-    
-    // Скрываем все тексты и сбрасываем анимации
-    allMenus.forEach(menu => {
-        menu.classList.remove('animate');
-        menu.style.opacity = 0;
-        menu.style.transform = 'translateY(100%)';
-    });
 
-    // Показываем выбранное меню с анимацией
+    // Скрываем все меню
+    allMenus.forEach(menu => menu.classList.remove('active'));
+
+    // Показываем выбранное меню
     const selectedMenu = document.getElementById(`menu${menuNumber}`);
     if (selectedMenu) {
-        selectedMenu.classList.add('animate');
+        selectedMenu.classList.add('active');
+
+        // Запускаем анимацию для заголовка
+        const title = selectedMenu.querySelector('.menu-title');
+        if (title) {
+            title.classList.remove('animate'); // сбрасываем анимацию
+            void title.offsetWidth; // перезапускаем
+            title.classList.add('animate');
+        }
     }
 }
 
-// Запускаем при загрузке
+// Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
-    // По умолчанию открываем первую кнопку
-    showMenu(1);
+    showMenu(1); // по умолчанию открываем первое меню
 });
-
