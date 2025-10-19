@@ -53,58 +53,56 @@ body {
 .content-area {
     flex: 1;
     background: white;
-    margin: 0;
+    margin-top: 20px;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    margin-top: 20px;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-/* Каждый экран меню */
+/* Контейнер каждой вкладки */
 .menu-content {
     position: absolute;
-    inset: 0; /* заменяет top/left/right/bottom: 0 */
-    display: flex;
-    flex-direction: column; /* чтобы заголовок и текст шли сверху вниз */
-    justify-content: center;
+    inset: 0;
+    display: none; /* скрыто по умолчанию */
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0s ease, transform 0s ease; /* мгновенно */
+    padding: 30px 20px;
+    overflow-y: auto;
     text-align: center;
 }
 
 .menu-content.active {
-    opacity: 1;
-    transform: translateY(0);
+    display: flex; /* показываем активную */
 }
 
-/* Заголовок с анимацией */
+/* Всплывающий заголовок */
 .menu-title {
     color: #007bff;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     opacity: 0;
+}
+
+/* Когда показывается заголовок (через класс .animate) */
+.menu-title.animate {
     animation: slideUpDown 3s ease forwards;
 }
 
-/* Информация под заголовком — статично, видно сразу */
+/* Информационный блок — постоянный контент */
 .menu-info {
     color: #333;
     font-size: 1rem;
+    margin-top: 100px;
+    width: 100%;
     max-width: 90%;
-    margin: 0 auto;
-    opacity: 1;
-    transform: none;
-}
-
-
-.menu-content.animate {
-    animation: slideUpDown 3s ease forwards; /* 3s = 1с вход + 2с пауза + 0.8с уход */
 }
 
 /* Нижняя белая часть с кнопками */
@@ -176,6 +174,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
