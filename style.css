@@ -193,6 +193,60 @@ body {
     border-bottom: 2px solid #0056b3; /* Можно сделать темнее при наведении */
 }
 
+.copy-container { 
+    width: 90%; 
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.copy-box { 
+    flex: 1;
+    background: linear-gradient(135deg, #eff3ff 0%, #d7dee7 100%); 
+    border: none; 
+    border-radius: 6px; 
+    padding: 6px 10px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.copy-text { 
+    white-space: nowrap; 
+    overflow-x: auto; 
+    font-size: 0.85rem; 
+    padding: 2px 0;
+    scrollbar-width: thin;
+}
+.copy-text::-webkit-scrollbar {
+    height: 3px;
+}
+.copy-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+.copy-text::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+}
+.copy-text::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+.copy-btn { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+}
+.copy-icon { 
+    width: 20px; 
+    height: 20px; 
+    filter: brightness(0) saturate(100%) invert(33%) sepia(94%) saturate(1418%) hue-rotate(195deg) brightness(95%) contrast(101%);
+}
 /* Нижняя белая часть с кнопками */
 .bottom-nav {
     background: white;
