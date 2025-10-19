@@ -103,9 +103,11 @@ body {
 .menu-info {
     color: #333;
     font-size: 1rem;
-    margin-top: 0px;
-    width: 100%;
-    max-width: 90%;
+    margin-top: 40px; /* расстояние от заголовка */
+    width: 100%;       /* обязательно */
+    max-width: 90%;    /* чтобы не растягивалось сильно */
+    margin-left: auto; /* центрируем по горизонтали */
+    margin-right: auto;
     text-align: center; /* центрируем текст */
 }
 
@@ -178,6 +180,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
