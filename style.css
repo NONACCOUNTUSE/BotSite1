@@ -102,7 +102,7 @@ body {
 .menu-info {
     color: #333;
     font-size: 1rem;
-    margin-top: 25px;
+    margin-top: 125px;
     width: 100%;
     max-width: 90%;
 }
@@ -176,6 +176,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
