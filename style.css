@@ -72,7 +72,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #007bff;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 600;
     text-align: center;
     opacity: 0;
@@ -147,17 +147,18 @@ body {
     }
     15% {
         opacity: 1;
-        transform: translateY(20%);
+        transform: translateY(35%);
     }
     70% {
         opacity: 1;
-        transform: translateY(20%);
+        transform: translateY(35%);
     }
     100% {
         opacity: 0;
         transform: translateY(100%);
     }
 }
+
 
 
 
