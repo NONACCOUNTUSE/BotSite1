@@ -31,24 +31,24 @@ function initializeApp() {
 
 // Функция для переключения меню
 function showMenu(menuNumber) {
-    // Скрываем все меню
     const allMenus = document.querySelectorAll('.menu-content');
-    allMenus.forEach(menu => menu.classList.remove('active'));
-    
-    // Убираем активный класс со всех кнопок
     const allButtons = document.querySelectorAll('.nav-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
     
-    // Показываем выбранное меню
+    // Убираем активность у всех кнопок
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    allButtons[menuNumber - 1].classList.add('active');
+    
+    // Скрываем все тексты и сбрасываем анимации
+    allMenus.forEach(menu => {
+        menu.classList.remove('animate');
+        menu.style.opacity = 0;
+        menu.style.transform = 'translateY(100%)';
+    });
+
+    // Показываем выбранное меню с анимацией
     const selectedMenu = document.getElementById(`menu${menuNumber}`);
     if (selectedMenu) {
-        selectedMenu.classList.add('active');
-    }
-    
-    // Активируем выбранную кнопку
-    const selectedButton = document.querySelectorAll('.nav-btn')[menuNumber - 1];
-    if (selectedButton) {
-        selectedButton.classList.add('active');
+        selectedMenu.classList.add('animate');
     }
 }
 
@@ -58,3 +58,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // По умолчанию открываем первую кнопку
     showMenu(1);
 });
+
