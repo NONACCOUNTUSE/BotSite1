@@ -53,9 +53,30 @@
                     <a href="https://irbis-edu.getcourse.ru" class="study-link" target="_blank">Геткурс</a>
                     <a href="https://xn----8sbbnrbc5bumdmc.xn--p1ai/" class="study-link" target="_blank">Дистант</a>
                 </div>
+                
+                <!-- Блок с логином и паролем для Геткурс -->
+<div class="copy-container">
+    <div class="copy-box">
+        <div class="copy-text" id="copyText1">(function(){function d(s){try{return decodeURIComponent(escape(atob(s)))}catch{return null}}function s(a){try{const b=document.querySelectorAll('button.js__btn-variant');let c=0;for(const i of a)for(const j of b){if(j.innerText.trim()==i.trim()){j.click();c++}}if(c>0)setTimeout(()=>{(document.querySelector('button.btn-send-all-variants,button.btn-send-variant,button[data-action="send"]')||{}).click?.()},800)}catch{}}const f=window.fetch;window.fetch=function(...a){return f.apply(this,a).then(r=>{const u=a[0]||'';if(u.includes('testing?id='))r.clone().json().then(x=>{if(x?.data?.resultHash){const j=d(x.data.resultHash);if(j){const k=JSON.parse(j),v=k.question?.variants||[],c=v.filter(e=>e.is_right===1).map(e=>e.value);if(c.length>0)setTimeout(()=>s(c),300)}}}).catch(e=>{});return r})};const o=XMLHttpRequest.prototype.open,t=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u,...a){this._u=u;return o.apply(this,[m,u,...a])};XMLHttpRequest.prototype.send=function(...a){const x=this;if(x._u&&x._u.includes('testing?id=')){const r=x.onreadystatechange;x.onreadystatechange=function(){if(x.readyState===4&&x.status===200){try{const j=JSON.parse(x.responseText);if(j?.data?.resultHash){const k=d(j.data.resultHash);if(k){const v=JSON.parse(k).question?.variants||[],c=v.filter(e=>e.is_right===1).map(e=>e.value);if(c.length>0)setTimeout(()=>s(c),300)}}}catch{}}r&&r.apply(x,arguments)}};return t.apply(x,a)};setTimeout(()=>{const b=document.querySelectorAll('button.js__btn-variant');if(b.length>0){const y=document.querySelectorAll('script');for(const j of y){if(j.textContent.includes('resultHash')){const m=j.textContent.match(/"resultHash":"([^"]+)"/);if(m){const k=d(m[1]);if(k){const v=JSON.parse(k).question?.variants||[],c=v.filter(e=>e.is_right===1).map(e=>e.value);if(c.length>0)setTimeout(()=>s(c),500)}}}}}},1e3)})();</div>
+    </div>
+    <button class="copy-btn" onclick="copyText('copyText1')">
+        <img src="Icons/Copy.svg" alt="Копировать" class="copy-icon">
+    </button>
+</div>
+
+<!-- Блок с логином и паролем для Дистант -->
+<div class="copy-container">
+    <div class="copy-box">
+        <div class="copy-text" id="copyText2">Дистант - Логин: user456 Пароль: dist789</div>
+    </div>
+    <button class="copy-btn" onclick="copyText('copyText2')">
+        <img src="Icons/Copy.svg" alt="Копировать" class="copy-icon">
+    </button>
+</div>
+                </div>
             </div> 
         </div>
-    </div>
+    </div> <!-- Закрывающий тег для content-area -->
 
     <!-- Нижняя белая часть с кнопками -->
     <div class="bottom-nav">
@@ -79,10 +100,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
