@@ -147,17 +147,18 @@ body {
     }
     15% {
         opacity: 1;
-        transform: translateY(30);
+        transform: translateY(40);
     }
     70% {
         opacity: 1;
-        transform: translateY(30);
+        transform: translateY(40);
     }
     100% {
         opacity: 0;
         transform: translateY(100%);
     }
 }
+
 
 
 
