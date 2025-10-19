@@ -56,6 +56,23 @@ function showMenu(menuNumber) {
     }
 }
 
+// Функция для копирования текста
+function copyText(elementId) {
+    const copyText = document.getElementById(elementId);
+    const textToCopy = copyText.textContent;
+    
+    // Создаем временный textarea для копирования
+    const textArea = document.createElement('textarea');
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    
+    // Убираем визуальную обратную связь (галочку и изменение цвета)
+    // Теперь ничего не меняется при нажатии
+}
+
 // Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
