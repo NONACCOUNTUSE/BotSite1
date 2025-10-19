@@ -58,13 +58,15 @@ body {
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    min-height: 70vh; /* минимальная высота */
     z-index: 1;
 }
 
 /* Контейнер каждой вкладки */
 .menu-content {
-    position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     display: none; /* скрыто по умолчанию */
     height: auto; /* не 100% */
     flex-direction: column;
@@ -73,6 +75,7 @@ body {
     padding: 30px 20px;
     overflow: hidden; /* отключаем скролл */
     text-align: center;
+    min-height: 60vh; /* разная минимальная высота для каждой */
 }
 
 .menu-content.active {
@@ -80,7 +83,7 @@ body {
     justify-content: flex-start; /* поднимаем контент вверх */
     align-items: center;     /* центр по горизонтали */
     flex-direction: column;
-    padding-top: 20px;           /* отступ сверху */
+    padding-top: 0px;           /* отступ сверху */
 }
 
 /* Всплывающий заголовок */
@@ -101,16 +104,43 @@ body {
     animation: slideUpDown 3s ease forwards;
 }
 
+/* Разная высота для каждой менюшки */
+#menu1 .menu-info {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#menu2 .menu-info {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#menu3 .menu-info {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#menu4 .menu-info {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#menu5 .menu-info {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 /* Информационный блок — постоянный контент */
 .menu-info {
     color: #333;
     font-size: 1rem;
-    margin-top: 40px; /* расстояние от заголовка */
     width: 100%;       /* обязательно */
     max-width: 90%;    /* чтобы не растягивалось сильно */
     margin-left: auto; /* центрируем по горизонтали */
     margin-right: auto;
     text-align: center; /* центрируем текст */
+    flex: 1; /* занимает доступное пространство */
+    justify-content: center; /* центрируем контент по вертикали */
 }
 
 /* Контейнер для ссылок в разделе Учёба */
@@ -148,7 +178,7 @@ body {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url('Link.svg');
+    background-image: url('Icons/Link.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
