@@ -79,6 +79,32 @@ body {
     transform: translateY(100%); /* спрятан снизу */
 }
 
+/* Заголовок меню — всплывает снизу и уходит */
+.menu-title {
+    color: #007bff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    animation: slideUpDown 3s ease forwards;
+}
+
+/* Информация под заголовком — без анимации */
+.menu-info {
+    margin-top: 80px;
+    opacity: 1; /* видно сразу */
+    transform: none; /* без движения */
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .menu-content.active {
     display: flex;
     opacity: 1;
@@ -158,6 +184,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
