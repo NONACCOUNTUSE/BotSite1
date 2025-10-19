@@ -77,7 +77,8 @@ body {
 .menu-content.active {
     display: flex; /* показываем активную */
     justify-content: center; /* центр по вертикали */
-    align-items: flex-start; /* контент чуть ниже, если нужно */
+    align-items: center;     /* центр по горизонтали */
+    flex-direction: column;
 }
 
 /* Всплывающий заголовок */
@@ -177,6 +178,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
