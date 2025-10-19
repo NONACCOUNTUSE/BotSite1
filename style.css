@@ -76,9 +76,10 @@ body {
 
 .menu-content.active {
     display: flex; /* показываем активную */
-    justify-content: center; /* центр по вертикали */
+    justify-content: flex-start; /* поднимаем контент вверх */
     align-items: center;     /* центр по горизонтали */
     flex-direction: column;
+    padding-top: 20px;           /* отступ сверху */
 }
 
 /* Всплывающий заголовок */
@@ -180,6 +181,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
