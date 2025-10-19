@@ -66,6 +66,7 @@ body {
     position: absolute;
     inset: 0;
     display: none; /* скрыто по умолчанию */
+    height: auto; /* не 100% */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -110,6 +111,41 @@ body {
     margin-left: auto; /* центрируем по горизонтали */
     margin-right: auto;
     text-align: center; /* центрируем текст */
+}
+
+/* Контейнер для ссылок в разделе Учёба */
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Стили для ссылок на сайты - текстовые */
+.study-link {
+    display: inline-block;
+    padding: 10px 0;
+    background: transparent;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid #007bff; /* Подчеркивание всегда видно */
+}
+
+.study-link:hover {
+    background: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+    border-bottom: 2px solid #0056b3; /* Можно сделать темнее при наведении */
 }
 
 /* Нижняя белая часть с кнопками */
@@ -181,7 +217,6 @@ body {
         transform: translateY(100%);
     }
 }
-
 
 
 
