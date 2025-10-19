@@ -70,12 +70,14 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 30px 20px;
-    overflow-y: auto;
+    overflow: hidden; /* отключаем скролл */
     text-align: center;
 }
 
 .menu-content.active {
     display: flex; /* показываем активную */
+    justify-content: center; /* центр по вертикали */
+    align-items: flex-start; /* контент чуть ниже, если нужно */
 }
 
 /* Всплывающий заголовок */
@@ -100,7 +102,7 @@ body {
 .menu-info {
     color: #333;
     font-size: 1rem;
-    margin-top: 100px;
+    margin-top: 25px;
     width: 100%;
     max-width: 90%;
 }
@@ -174,6 +176,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
