@@ -102,9 +102,10 @@ body {
 .menu-info {
     color: #333;
     font-size: 1rem;
-    margin-top: 80px;
+    margin-top: 0px;
     width: 100%;
     max-width: 90%;
+    text-align: center; /* центрируем текст */
 }
 
 /* Нижняя белая часть с кнопками */
@@ -176,6 +177,7 @@ body {
         transform: translateY(100%);
     }
 }
+
 
 
 
