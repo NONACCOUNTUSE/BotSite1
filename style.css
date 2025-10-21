@@ -261,6 +261,66 @@ body {
     z-index: 2;
 }
 
+.settings-btn {
+    background: none;
+    border: none;
+    padding: 12px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.settings-btn img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    
+}
+
+.settings-btn.active {
+    background: #007bff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.settings-btn.active img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.settings-links {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 5px;
+    border-top: 1px solid #f0f0f0;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#menu6.active .settings-links {
+    opacity: 1;
+    transition-delay: 0.5s; /* задержка перед появлением */
+}
+
+
+.settings-link {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    padding: 3px 0;
+    line-height: 1.4;
+}
+
 .nav-btn {
     background: none;
     border: none;
@@ -295,6 +355,95 @@ body {
 
 .nav-btn:not(.active):hover {
     background: #f0f0f0;
+}
+
+.chart-container {
+    width: 100%;
+    height: 200px;
+    margin: 20px 0;
+}
+
+.exchange-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+.current-rate {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.rate-change {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background: #f8f9fa;
+}
+
+.rate-change.positive {
+    color: #28a745;
+    background: #d4edda;
+}
+
+.rate-change.negative {
+    color: #dc3545;
+    background: #f8d7da;
+}
+
+.update-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.currency-selector {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.currency-selector select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    background: white;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.currency-selector select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.last-update {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Стили для крипто-иконок */
+.crypto-icon {
+    font-size: 1.1rem;
+    margin-right: 5px;
 }
 
 /* Ключевые кадры: снизу вверх, пауза, вниз */
